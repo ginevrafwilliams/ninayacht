@@ -3,10 +3,14 @@
 .home-header {
   width: 100%;
   height: 100vh;
-  background-image: image-url('boat2.jpg');
+  // background-image: image-url('boat2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 // zoom effect

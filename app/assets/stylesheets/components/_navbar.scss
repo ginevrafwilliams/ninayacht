@@ -3,11 +3,16 @@
 }
 
 .mynav {
+  height: 60px;
+  padding: 24px 50px 24px 50px;
+  z-index: 999;
+  position: relative;
+}
+
+.mynav-items {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
-  padding: 24px 50px 24px 50px;
 }
 
 .mynav-link {
@@ -17,6 +22,7 @@
   color: white;
   opacity: 0.5;
   transition: 0.3s;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 .mynav-link:hover {
