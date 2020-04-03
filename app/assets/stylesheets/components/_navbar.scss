@@ -3,10 +3,9 @@
 }
 
 .mynav {
-  height: 60px;
   padding: 24px 50px 24px 50px;
-  z-index: 999;
-  position: relative;
+  // z-index: 999;
+  // position: relative;
 }
 
 .mynav-items {
@@ -33,24 +32,37 @@
 
 @media (max-width: 768px) {
 
-    .mynav-items {
-        height: 80vh;
+    .mynav {
+        // margin: 0;
+        // height: 0%;
+        // width: 100%;
+        // z-index: 1;
+        // position: fixed;
+        // left: 0;
+        // top: 0;
+        // background-color: #FCF9EF;
+        // overflow-x: hidden;
+        // transition: 0.5s;
     }
 
-    .mynav-links {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-    }
+  .mynav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 
-    .mynav-link {
-        color: #03012C;
-        opacity: 1;
-        font-size: 40px;
-        transition: 0.3s;
-        text-shadow: none;
-    }
+  .mynav-link {
+    color: #03012C;
+    opacity: 1;
+    font-size: 35px;
+    transition: 0.3s;
+    text-shadow: none;
+  }
 }
 
 

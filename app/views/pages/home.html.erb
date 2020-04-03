@@ -1,19 +1,6 @@
-<%= render "components/navbar" %>
 
-  <script>
-    const openBtn = document.querySelector('.openbtn');
-    openBtn.addEventListener('click', function() {
-      document.getElementById("myNav").style.height = "100%";
-    });
-
-
-    const closeBtn = document.querySelector('.closebtn');
-    closeBtn.addEventListener('click', function() {
-      document.getElementById("myNav").style.height = "0%";
-    });
-  </script>
-
-<div class="home-header kenburns-top" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path("boat2.jpg")%>')">
+<div class="home-header" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= image_path("boat2.jpg")%>')">
+  <%= render "components/navbar" %>
 </div>
 
 
