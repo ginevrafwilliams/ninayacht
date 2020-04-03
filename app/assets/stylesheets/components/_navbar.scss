@@ -30,6 +30,22 @@
   text-decoration: none;
 }
 
+.closebtn,
+.openbtn {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 60px;
+}
+
+.openbtn {
+  color: #FCF9EF;
+}
+
+.closebtn {
+  color: #03012C;
+}
+
 @media (max-width: 768px) {
 
   .mynav {
