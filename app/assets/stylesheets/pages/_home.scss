@@ -5,11 +5,38 @@
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
-  // position: absolute;
-  // top: 0;
-  // right: 0;
-  // left: 0;
-  // bottom:0;
+  padding: 24px 50px 24px 50px;
+}
+
+.home-header h1 {
+  color: white;
+  font-size: 50px;
+  margin-bottom: 25px;
+  font-family: 'Amiri', serif;
+  font-weight: lighter;
+}
+
+.sub-text {
+  color: white;
+  opacity: 0.5;
+  text-shadow: 1px 1px 2px #000000;
+  margin-bottom: 50px;
+}
+
+.button-nina {
+  color: white;
+  opacity: 0.5;
+  text-shadow: 1px 1px 2px #000000;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.button-nina:hover {
+  color: white;
+  opacity: 1;
+  text-decoration: none;
 }
 
 // zoom effect
@@ -46,4 +73,24 @@
     -webkit-transform-origin: top;
             transform-origin: top;
   }
+}
+
+@media (max-width: 768px) {
+
+  .home-header h1 {
+    color: white;
+    font-size: 33px;
+    margin-bottom: 25px;
+    font-family: 'Amiri', serif;
+    font-weight: lighter;
+  }
+
+  .sub-text {
+    color: white;
+    font-size: 19px;
+    opacity: 0.5;
+    text-shadow: 1px 1px 2px #000000;
+    margin-bottom: 50px;
+  }
+
 }
