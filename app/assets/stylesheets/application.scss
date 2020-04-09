@@ -13,7 +13,7 @@
 @import "pages/index";
 
 body {
-  background-color: #FCF9EF;
+  background-color: white;
   color: #03012C;
   margin: 0;
   padding: 0;
@@ -21,10 +21,21 @@ body {
 
 h1 {
   font-size: 26px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 45px;
+  margin: 0;
+}
+
+h4 {
+  font-size: 21px;
 }
 
 p {
   font-size: 16px;
+  margin: 0;
 }
 
 .center-hv {
@@ -37,6 +48,10 @@ p {
 
 .align-center {
   text-align: center;
+}
+
+.text-shadow {
+  text-shadow: 0px 0px 9px rgba(0,0,0,0.5);
 }
 
 .mobile-only {
@@ -150,6 +165,10 @@ p {
 
   h1 {
     font-size: 35px;
+  }
+
+  h3 {
+    font-size: 60px;
   }
 
   p {
