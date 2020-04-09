@@ -1,5 +1,10 @@
 // header
 
+.body {
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
 .home-header {
   background-size: cover;
   background-repeat: no-repeat;
@@ -8,70 +13,39 @@
   padding: 24px 50px 24px 50px;
 }
 
+.hp-text {
+  margin-top: 15vh;
+  width: 50%;
+}
+
 .home-header h1 {
   color: white;
   margin-bottom: 15px;
-  font-family: 'Amiri', serif;
   font-weight: lighter;
 }
 
 .sub-text {
   color: white;
   opacity: 0.5;
-  text-shadow: 1px 1px 2px #000000;
-  margin-bottom: 0;
+  text-shadow: 0px 0px 2px #000000;
+  padding-bottom: 15px;
 }
 
-// .button-nina {
-//   color: white;
-//   opacity: 0.5;
-//   text-shadow: 1px 1px 2px #000000;
-//   border: 1px solid rgba(255, 255, 255, 0.5);
-//   padding: 10px 20px 10px 20px;
-//   border-radius: 20px;
-//   transition: 0.3s;
-// }
-
-// .button-nina:hover {
-//   color: white;
-//   opacity: 1;
-//   text-decoration: none;
-// }
-
-// zoom effect
-
-.kenburns-top {
-  -webkit-animation: kenburns-top 5s ease-out both;
-          animation: kenburns-top 5s ease-out both;
+.button-nina {
+  color: white;
+  opacity: 0.5;
+  // text-shadow: 1px 1px 2px #000000;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 10px 20px 10px 20px;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
-@-webkit-keyframes kenburns-top {
-  0% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: 50% 16%;
-            transform-origin: 50% 16%;
-  }
-  100% {
-    -webkit-transform: scale(1.25) translateY(-15px);
-            transform: scale(1.25) translateY(-15px);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-  }
+.button-nina:hover {
+  color: white;
+  opacity: 1;
+  text-decoration: none;
 }
-@keyframes kenburns-top {
-  0% {
-    -webkit-transform: scale(1) translateY(0);
-            transform: scale(1) translateY(0);
-    -webkit-transform-origin: 50% 16%;
-            transform-origin: 50% 16%;
-  }
-  100% {
-    -webkit-transform: scale(1.25) translateY(-15px);
-            transform: scale(1.25) translateY(-15px);
-    -webkit-transform-origin: top;
-            transform-origin: top;
-  }
-}
+
 
 
