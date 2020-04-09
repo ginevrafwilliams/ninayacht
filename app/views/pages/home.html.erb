@@ -1,5 +1,4 @@
-<div class="desktop-only">
-  <div class="home-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path("boat6.jpg")%>)">
+  <div class="home-header">
     <%= render "components/navbar" %>
     <div class="hp-text">
       <h1 class="text-focus-in">NINA SPIRIT OF THE WIND</h1>
@@ -7,16 +6,5 @@
       <p class="text-focus-in-3"><%= link_to "Discover Nina", about_path, class: "button-nina" %></p>
      </div>
   </div>
-</div>
 
 
-<div class="mobile-only">
-  <div class="home-header" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path("boat7.jpg")%>)">
-    <%= render "components/navbar" %>
-    <div class="hp-text">
-      <h1 class="text-focus-in">NINA SPIRIT OF THE WIND</h1>
-      <p class="sub-text text-focus-in-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-      <p class="text-focus-in-3"><%= link_to "Discover Nina", about_path, class: "button-nina" %></p>
-     </div>
-  </div>
-</div>
