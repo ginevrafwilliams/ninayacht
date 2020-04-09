@@ -1,11 +1,5 @@
-// header
-
-.body {
-  text-align: center;
-  -webkit-font-smoothing: antialiased;
-}
-
 .home-header {
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('boat6.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,14 +21,12 @@
 .sub-text {
   color: white;
   opacity: 0.5;
-  text-shadow: 0px 0px 2px #000000;
   padding-bottom: 15px;
 }
 
 .button-nina {
   color: white;
   opacity: 0.5;
-  // text-shadow: 1px 1px 2px #000000;
   border: 1px solid rgba(255, 255, 255, 0.5);
   padding: 10px 20px 10px 20px;
   border-radius: 20px;
@@ -47,5 +39,20 @@
   text-decoration: none;
 }
 
+@media (max-width: 768px) {
+ .hp-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 0;
+ }
+
+ .home-header {
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('boat7.jpeg');
+ }
+}
 
 
