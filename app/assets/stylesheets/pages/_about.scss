@@ -34,7 +34,7 @@
 }
 
 .spec {
-  padding: 40px 20px;
+  padding: 35px 15px;
   height: 150px;
 }
 
@@ -47,7 +47,7 @@ img {
   width: 100%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .pages-title {
     margin-top: 40vh;
     color: white;
@@ -57,5 +57,10 @@ img {
   .pages-header {
     background-attachment: fixed;
     margin-bottom: 100px;
+  }
+
+  .spec {
+    padding: 40px 20px;
+    height: 150px;
   }
 }
