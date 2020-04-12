@@ -1,4 +1,4 @@
-.pages-header {
+.about-header {
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), image-url("about2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@
 }
 
 .deckplan {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-bottom:60px;
 }
 
@@ -54,7 +54,7 @@ img {
     font-weight: lighter;
   }
 
-  .pages-header {
+  .about-header {
     background-attachment: fixed;
     margin-bottom: 100px;
   }
@@ -62,5 +62,9 @@ img {
   .spec {
     padding: 40px 20px;
     height: 150px;
+  }
+
+  .deckplan {
+    margin-top: 10px;
   }
 }
