@@ -65,22 +65,47 @@
 </div>
 
 <script>
+
+// CREATE LIGHTBOX DIV WITH DARK BACKGROUND AND ADD IT TO BODY
+// DISPLAY NONE
+
 const lightbox = document.createElement('div')
 lightbox.id = 'lightbox'
 document.body.appendChild(lightbox)
 
+// SELECT ALL IMAGES, ON CLICK THE LIGHTBOX DIV GETS ACTIVATED
+// CREATE IMAGE WITH SAME SRC
+
 const images = document.querySelectorAll('img')
 images.forEach(image => {
   image.addEventListener('click', e => {
+
     lightbox.classList.add('active')
     const img = document.createElement('img')
     img.src = image.src
+
     while (lightbox.firstChild) {
       lightbox.removeChild(lightbox.firstChild)
     }
+
     lightbox.appendChild(img)
+
+    const arrowRight = document.createElement('div');
+    arrowRight.id =  'arrowRight';
+    arrowRight.innerHTML = "&#8594;";
+
+    lightbox.appendChild(arrowRight);
+
+    const arrowLeft = document.createElement('div');
+    arrowLeft.id =  'arrowLeft';
+    arrowLeft.innerHTML = "&#8592;";
+
+    lightbox.appendChild(arrowLeft);
+
   })
 })
+
+// WHEN LIGHTBOX IS ACTIVATED AND WE CLICK ON SMTG THAT IS NOT THE IMAGE IT SHOULD REMOVE ACTIVE CLASS
 
 lightbox.addEventListener('click', e => {
   if (e.target !== e.currentTarget) return

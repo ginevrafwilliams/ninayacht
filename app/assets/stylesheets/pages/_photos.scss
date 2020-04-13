@@ -37,16 +37,33 @@
 
 #lightbox.active {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 #lightbox img {
-  max-width: 60%;
-  max-height: 90%;
+  max-width: 70%;
+  max-height: 80%;
   padding: 4px;
   background-color: #03012C;
   border: 2px solid white;
+}
+
+#arrowRight {
+  color: white;
+  position: relative;
+  left: 40px;
+  top: 20px;
+  font-size: 20px
+}
+
+#arrowLeft {
+  color: white;
+  position: relative;
+  right: 40px;
+  bottom: 10px;
+  font-size: 20px;
 }
 
 @media (min-width: 768px) {
@@ -73,6 +90,23 @@
   .grid img {
     width: 200px;
     height: 200px;
+  }
+
+  #lightbox img {
+    max-width: 50%;
+    max-height: 80%;
+    padding: 4px;
+    background-color: #03012C;
+    border: 2px solid white;
+  }
+
+  #arrowLeft {
+    font-size: 30px;
+    bottom: 25px;
+  }
+
+  #arrowRight {
+    font-size: 30px;
   }
 }
 
