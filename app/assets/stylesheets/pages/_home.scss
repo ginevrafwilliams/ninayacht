@@ -8,8 +8,14 @@
 }
 
 .hp-text {
-  margin-top: 15vh;
-  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  // margin-top: 15vh;
+  // width: 50%;
 }
 
 .home-header h1 {
@@ -26,8 +32,18 @@
 
 .button-nina {
   color: white;
-  opacity: 0.5;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 10px 25px 10px 25px;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.button-nina-blue {
+  color: #03012C;
+  opacity: 0.7;
+  border: 1px solid rgba(4, 1, 4, .7);;
   padding: 10px 20px 10px 20px;
   border-radius: 20px;
   transition: 0.3s;
@@ -35,6 +51,12 @@
 
 .button-nina:hover {
   color: white;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.button-nina-blue:hover {
+  color: #03012C;
   opacity: 1;
   text-decoration: none;
 }

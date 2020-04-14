@@ -2,7 +2,7 @@
 
 <div class="gallery-header">
   <%= render "components/navbar" %>
-    <h3 class="pages-title align-center text-shadow text-focus-in">PHOTO GALLERY</h3>
+    <h3 class="pages-title align-center text-shadow text-focus-in">GALLERY</h3>
 </div>
 
 <!-- GALLERY -->
@@ -77,11 +77,11 @@ document.body.appendChild(lightbox)
 // SELECT ALL IMAGES
 
 const images = document.querySelectorAll('img')
-images.forEach(image => {
-  image.addEventListener('click', e => {
 
 // WHEN CLICKING ON EACH IMAGE THE LIGHTBOX DIV GETS ACTIVATED
 
+images.forEach(image => {
+  image.addEventListener('click', e => {
     lightbox.classList.add('active')
 
 // CREATE IMAGE WITH SAME SRC
@@ -122,7 +122,7 @@ images.forEach(image => {
     if (active) {
       const arrowRight = document.getElementById('arrowRight');
       arrowRight.addEventListener('click', function() {
-        const img = document.getElementById('lightbox').firstChild;
+        const currentImg = document.getElementById('lightbox').firstChild;
         // add code
       })
     }
@@ -139,4 +139,3 @@ lightbox.addEventListener('click', e => {
 })
 
 </script>
-
