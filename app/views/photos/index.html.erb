@@ -74,7 +74,8 @@ lightbox.id = 'lightbox'
 document.body.appendChild(lightbox)
 
 // SELECT ALL IMAGES, ON CLICK THE LIGHTBOX DIV GETS ACTIVATED
-// CREATE IMAGE WITH SAME SRC
+// CREATE IMAGE WITH SAME SRC AND APPEND IT
+// CREATE ARROWS AND APPEND THEM
 
 const images = document.querySelectorAll('img')
 images.forEach(image => {
@@ -110,6 +111,14 @@ images.forEach(image => {
 lightbox.addEventListener('click', e => {
   if (e.target !== e.currentTarget) return
   lightbox.classList.remove('active')
+
 })
+
+// const arrowRight = document.querySelector('.arrowRight');
+// arrowRight.addEventListener('click', function() {
+//   const img = document.querySelector('img');
+//   img.style.display = "none";
+// })
+
 </script>
 

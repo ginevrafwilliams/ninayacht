@@ -52,18 +52,30 @@
 
 #arrowRight {
   color: white;
+  opacity: 0.7;
   position: relative;
   left: 40px;
   top: 20px;
-  font-size: 20px
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#arrowRight:hover {
+  opacity: 1;
 }
 
 #arrowLeft {
   color: white;
+  opacity: 0.7;
   position: relative;
   right: 40px;
   bottom: 10px;
   font-size: 20px;
+  cursor: pointer;
+}
+
+#arrowLeft:hover {
+  opacity: 1;
 }
 
 @media (min-width: 768px) {
