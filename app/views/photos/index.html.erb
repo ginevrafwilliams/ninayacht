@@ -12,7 +12,7 @@
   <p data-aos="zoom-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 </div>
 
-<div class="grid">
+<div class="grid box">
   <div data-aos="zoom-in">
     <%= image_tag("gallery2.jpg") %>
   </div>
@@ -61,35 +61,45 @@
   <div data-aos="zoom-in">
     <%= image_tag("gallery2.jpg") %>
   </div>
-
 </div>
 
 <script>
 
-// CREATE LIGHTBOX DIV WITH DARK BACKGROUND AND ADD IT TO BODY
-// DISPLAY NONE
+// CREATE LIGHTBOX DIV WITH DARK BACKGROUND
 
 const lightbox = document.createElement('div')
 lightbox.id = 'lightbox'
+
+// APPEND LIGHTBOX TO THE BODY WITH DISPLAY NONE
+
 document.body.appendChild(lightbox)
 
-// SELECT ALL IMAGES, ON CLICK THE LIGHTBOX DIV GETS ACTIVATED
-// CREATE IMAGE WITH SAME SRC AND APPEND IT
-// CREATE ARROWS AND APPEND THEM
+// SELECT ALL IMAGES
 
 const images = document.querySelectorAll('img')
 images.forEach(image => {
   image.addEventListener('click', e => {
 
+// WHEN CLICKING ON EACH IMAGE THE LIGHTBOX DIV GETS ACTIVATED
+
     lightbox.classList.add('active')
+
+// CREATE IMAGE WITH SAME SRC
+
     const img = document.createElement('img')
     img.src = image.src
+
+// MAKE SURE THAT ONLY 1 PIC GETS DISPLAYED
 
     while (lightbox.firstChild) {
       lightbox.removeChild(lightbox.firstChild)
     }
 
+// APPEND IMAGE
+
     lightbox.appendChild(img)
+
+// CREATE RIGHT ARROW AND APPEND IT
 
     const arrowRight = document.createElement('div');
     arrowRight.id =  'arrowRight';
@@ -97,28 +107,36 @@ images.forEach(image => {
 
     lightbox.appendChild(arrowRight);
 
+// CREATE LEFT ARROW AND APPEND IT
+
     const arrowLeft = document.createElement('div');
     arrowLeft.id =  'arrowLeft';
     arrowLeft.innerHTML = "&#8592;";
 
     lightbox.appendChild(arrowLeft);
 
+// IF LIGHTBOX IS ACTIVE AND YOU CLICK ON RIGHT ARROW THE CURRENT IMAGE SHOULD BE REPLACED BY THE NEXT ONE
+
+    const active = lightbox.classList.contains('active');
+
+    if (active) {
+      const arrowRight = document.getElementById('arrowRight');
+      arrowRight.addEventListener('click', function() {
+        const img = document.getElementById('lightbox').firstChild;
+        // add code
+      })
+    }
+
   })
 })
 
-// WHEN LIGHTBOX IS ACTIVATED AND WE CLICK ON SMTG THAT IS NOT THE IMAGE IT SHOULD REMOVE ACTIVE CLASS
+// WHEN LIGHTBOX IS ACTIVATED AND WE CLICK ON SMTG THAT IS NOT THE IMAGE REMOVE ACTIVE CLASS
 
 lightbox.addEventListener('click', e => {
   if (e.target !== e.currentTarget) return
   lightbox.classList.remove('active')
 
 })
-
-// const arrowRight = document.querySelector('.arrowRight');
-// arrowRight.addEventListener('click', function() {
-//   const img = document.querySelector('img');
-//   img.style.display = "none";
-// })
 
 </script>
 
