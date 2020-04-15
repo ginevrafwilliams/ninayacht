@@ -110,7 +110,7 @@
   }
 
   #lightbox img {
-    width: 60%;
+    width: 70%;
     padding: 4px;
     background-color: #03012C;
     border: 2px solid white;
@@ -123,6 +123,12 @@
 
   #arrowRight {
     font-size: 30px;
+  }
+}
+
+@media (min-width: 1030px) {
+  #lightbox img {
+    width: 50%;
   }
 }
 
