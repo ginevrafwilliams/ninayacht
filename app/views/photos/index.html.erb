@@ -13,17 +13,17 @@
 </div>
 
 <div class="grid">
+  <%= image_tag("gallery.jpg") %>
   <%= image_tag("gallery2.jpg") %>
-  <%= image_tag("boat2.jpg") %>
   <%= image_tag("gallery3.jpg") %>
-  <%= image_tag("boat6.jpg") %>
-  <%= image_tag("boat8.jpg") %>
-  <%= image_tag("boat9.jpg") %>
-  <%= image_tag("boat10.jpg") %>
-  <%= image_tag("boat12.jpg") %>
-  <%= image_tag("boat13.jpg") %>
-  <%= image_tag("boat15.jpg") %>
-  <%= image_tag("boat14.jpg") %>
+  <%= image_tag("gallery4.jpg") %>
+  <%= image_tag("gallery5.jpg") %>
+  <%= image_tag("gallery6.jpg") %>
+  <%= image_tag("gallery7.jpg") %>
+  <%= image_tag("gallery8.jpg") %>
+  <%= image_tag("gallery9.jpg") %>
+  <%= image_tag("gallery10.jpg") %>
+  <%= image_tag("about2.jpg") %>
   <%= image_tag("about.jpg") %>
 </div>
 
@@ -89,9 +89,9 @@ images.forEach((image) => {
     // IF LIGHTBOX IS ACTIVE AND YOU CLICK ON RIGHT ARROW THE CURRENT IMAGE SHOULD BE REPLACED BY THE NEXT ONE
 
     if (selectedImage.nextElementSibling == null) {
-      arrowRight.style.display = "none";
+      arrowRight.style.visibility = "hidden";
     } else if (selectedImage.previousElementSibling == null){
-      arrowLeft.style.display = "none";
+      arrowLeft.style.visibility = "hidden";
     }
 
     const active = lightbox.classList.contains("active");
@@ -104,13 +104,13 @@ images.forEach((image) => {
         let lightboxImage = document.querySelector(".lightboxImg-active");
         let galleryImage = document.querySelector(".galleryImg-active");
         if (galleryImage.nextElementSibling) {
-          arrowRight.style.display = "block";
-          arrowLeft.style.display = "block";
+          arrowRight.style.visibility = "visible";
+          arrowLeft.style.visibility = "visible";
           galleryImage.nextElementSibling.classList.add("galleryImg-active");
           galleryImage.classList.remove("galleryImg-active");
           lightboxImage.src = galleryImage.nextElementSibling.src;
         } else {
-          arrowRight.style.display = "none";
+          arrowRight.style.visibility = "hidden";
         }
       });
 
@@ -118,13 +118,13 @@ images.forEach((image) => {
         let lightboxImage = document.querySelector(".lightboxImg-active");
         let galleryImage = document.querySelector(".galleryImg-active");
         if (galleryImage.previousElementSibling) {
-          arrowLeft.style.display = "block";
-          arrowRight.style.display = "block";
+          arrowLeft.style.visibility = "visible";
+          arrowRight.style.visibility = "visible";
           galleryImage.previousElementSibling.classList.add("galleryImg-active");
           galleryImage.classList.remove("galleryImg-active");
           lightboxImage.src = galleryImage.previousElementSibling.src;
         } else {
-          arrowLeft.style.display = "none";
+          arrowLeft.style.visibility = "hidden";
         }
       });
     }
