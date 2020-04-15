@@ -12,130 +12,130 @@
   <p data-aos="zoom-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 </div>
 
-<div class="grid box">
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
-  <div data-aos="zoom-in">
-    <%= image_tag("gallery2.jpg") %>
-  </div>
+<div class="grid">
+  <%= image_tag("gallery2.jpg") %>
+  <%= image_tag("boat2.jpg") %>
+  <%= image_tag("gallery2.jpg") %>
+  <%= image_tag("boat2.jpg") %>
+  <%= image_tag("gallery2.jpg") %>
+  <%= image_tag("boat2.jpg") %>
+  <%= image_tag("gallery2.jpg") %>
+  <%= image_tag("boat2.jpg") %>
+  <%= image_tag("gallery2.jpg") %>
+  <%= image_tag("boat2.jpg") %>
+  <%= image_tag("gallery2.jpg") %>
+  <%= image_tag("boat2.jpg") %>
 </div>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
 // CREATE LIGHTBOX DIV WITH DARK BACKGROUND
 
-const lightbox = document.createElement('div')
-lightbox.id = 'lightbox'
+const lightbox = document.createElement("div");
+lightbox.id = "lightbox";
 
 // APPEND LIGHTBOX TO THE BODY WITH DISPLAY NONE
 
-document.body.appendChild(lightbox)
+document.body.appendChild(lightbox);
 
 // SELECT ALL IMAGES
 
-const images = document.querySelectorAll('img')
+const images = document.querySelectorAll("img");
 
-// WHEN CLICKING ON EACH IMAGE THE LIGHTBOX DIV GETS ACTIVATED
+// WHEN CLICKING ON EACH IMAGE THE GALLERY IMG AND LIGHTBOX DIV GET ACTIVATED
 
-images.forEach(image => {
-  image.addEventListener('click', e => {
-    lightbox.classList.add('active')
+images.forEach((image) => {
+  image.addEventListener("click", (e) => {
 
-// CREATE IMAGE WITH SAME SRC
+    const selectedImage = e.currentTarget;
+    selectedImage.classList.add("galleryImg-active");
 
-    const img = document.createElement('img')
-    img.src = image.src
+    lightbox.classList.add("active");
 
-// MAKE SURE THAT ONLY 1 PIC GETS DISPLAYED
+    // CREATE IMAGE WITH SAME SRC
+
+    const img = document.createElement("img");
+    img.src = image.src;
+    img.classList.add("lightboxImg-active");
+
+    // MAKE SURE THAT ONLY 1 PIC GETS DISPLAYED
 
     while (lightbox.firstChild) {
-      lightbox.removeChild(lightbox.firstChild)
+      lightbox.removeChild(lightbox.firstChild);
     }
 
-// APPEND IMAGE
+    // APPEND IMAGE
 
-    lightbox.appendChild(img)
+    lightbox.appendChild(img);
 
-// CREATE RIGHT ARROW AND APPEND IT
+    // CREATE RIGHT ARROW AND APPEND IT
 
-    const arrowRight = document.createElement('div');
-    arrowRight.id =  'arrowRight';
+    const arrowRight = document.createElement("div");
+    arrowRight.id = "arrowRight";
     arrowRight.innerHTML = "&#8594;";
 
     lightbox.appendChild(arrowRight);
 
-// CREATE LEFT ARROW AND APPEND IT
+    // CREATE LEFT ARROW AND APPEND IT
 
-    const arrowLeft = document.createElement('div');
-    arrowLeft.id =  'arrowLeft';
+    const arrowLeft = document.createElement("div");
+    arrowLeft.id = "arrowLeft";
     arrowLeft.innerHTML = "&#8592;";
 
     lightbox.appendChild(arrowLeft);
 
-// IF LIGHTBOX IS ACTIVE AND YOU CLICK ON RIGHT ARROW THE CURRENT IMAGE SHOULD BE REPLACED BY THE NEXT ONE
+    // IF LIGHTBOX IS ACTIVE AND YOU CLICK ON RIGHT ARROW THE CURRENT IMAGE SHOULD BE REPLACED BY THE NEXT ONE
 
-    const active = lightbox.classList.contains('active');
-
-    if (active) {
-      const arrowRight = document.getElementById('arrowRight');
-      arrowRight.addEventListener('click', function() {
-        const currentImg = document.getElementById('lightbox').firstChild;
-        // add code
-      })
+    if (!selectedImage.nextElementSibling) {
+      arrowRight.style.display = "none";
+    } else if (!selectedImage.previousElementSibling){
+      arrowLeft.style.display = "none";
     }
 
-  })
-})
+    const active = lightbox.classList.contains("active");
+
+    if (active) {
+      const arrowRight = document.getElementById("arrowRight");
+      const arrowLeft = document.getElementById("arrowLeft");
+
+      arrowRight.addEventListener("click", function (event) {
+        let lightboxImage = document.querySelector(".lightboxImg-active");
+        let galleryImage = document.querySelector(".galleryImg-active");
+        if (galleryImage.nextElementSibling) {
+          arrowRight.style.display = "block";
+          arrowLeft.style.display = "block";
+          galleryImage.nextElementSibling.classList.add("galleryImg-active");
+          galleryImage.classList.remove("galleryImg-active");
+          lightboxImage.src = galleryImage.nextElementSibling.src;
+        } else {
+          arrowRight.style.display = "none";
+        }
+      });
+
+      arrowLeft.addEventListener("click", function (event) {
+        let lightboxImage = document.querySelector(".lightboxImg-active");
+        let galleryImage = document.querySelector(".galleryImg-active");
+        if (galleryImage.nextElementSibling) {
+          arrowRight.style.display = "block";
+          arrowLeft.style.display = "block";
+          galleryImage.nextElementSibling.classList.add("galleryImg-active");
+          galleryImage.classList.remove("galleryImg-active");
+          lightboxImage.src = galleryImage.nextElementSibling.src;
+        } else {
+          arrowLeft.style.display = "none";
+        }
+      });
+    }
+  });
+});
 
 // WHEN LIGHTBOX IS ACTIVATED AND WE CLICK ON SMTG THAT IS NOT THE IMAGE REMOVE ACTIVE CLASS
 
-lightbox.addEventListener('click', e => {
-  if (e.target !== e.currentTarget) return
-  lightbox.classList.remove('active')
-
-})
+lightbox.addEventListener("click", (e) => {
+  if (e.target !== e.currentTarget) return;
+  lightbox.classList.remove("active");
+});
 
 </script>
