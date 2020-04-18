@@ -11,7 +11,7 @@
     <meta property="og:title" content="<%= meta_title %>" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= request.original_url %>" />
-    <meta property="og:image" content="<%= image_url("ogimage.jpeg") %>" />
+    <meta property="og:image" content="<%= image_url("ogimage.png") %>" />
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
 
@@ -24,6 +24,7 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
